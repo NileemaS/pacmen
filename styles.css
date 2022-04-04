@@ -147,7 +147,7 @@ div {
 body {font-family: "Lato", sans-serif;}
 
 /* The actual popup (appears on top) */
-.popup1 .popuptext1 {
+.popup .popuptext {
   visibility: hidden;
   width: 700px;
   height: 300px;
@@ -163,7 +163,7 @@ body {font-family: "Lato", sans-serif;}
 }
 
 /* Popup arrow */
-.popup1 .popuptext1::after {
+.popup .popuptext::after {
   content: ""; 
   top: 50%;
   left: 50%;
@@ -172,11 +172,12 @@ body {font-family: "Lato", sans-serif;}
   z-index: 10;
   border-width: 10px;
   border-style: solid;
-  border-color: #555;
+  
 }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup1 .show1 {
+.popup .show {
+  display: block;
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
