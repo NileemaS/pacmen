@@ -5,11 +5,15 @@
     </link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src = "https://cdn.jsdelivr.net/gh/NileemaS/profile/profileHeader.js" type = "application/javascript" defer></script>    
-    <script src = "https://cdn.jsdelivr.net/gh/NileemaS/profile/profileFooter.js" type = "application/javascript" defer></script> 
+    <script src = "https://cdn.jsdelivr.net/gh/NileemaS/profile/profileHeader.js" 
+        type = "application/javascript" defer></script>    
+    <script src = "https://cdn.jsdelivr.net/gh/NileemaS/profile/profileFooter.js" 
+        type = "application/javascript" defer></script> 
     <script src = "compPacMen.js" type = "text/javascript" defer></script> 
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <script src = "https://cdn.jsdelivr.net/gh/NileemaS/profile/search.js" type = "application/javascript" defer></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" 
+        rel="stylesheet">
+    
+    
     <script src = "pacmen.js" type = "text/javascript" defer></script> 
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/gh/NileemaS/profile/styles.css">
     <link rel = "stylesheet" href = "./styles.css">
@@ -23,36 +27,61 @@
     </div>
        
     <div class = "main">
+        <!--Main Left Div Start-->
         <div id = "leftside" class = "divleft sidebar"> 
             <span class="infoheader">More to Know</span>
             <div class="divimage"></div>
-            <ul class="list-unstyled list-inline" > 
+            <ul class="list-unstyled list-inline" style="margin: 5px;"> 
+                <li class="list-inline-item">
+                    <button type="button" onclick="myFunction()"
+                        id="btn-leftbar" >                
+                        <span Class="glyphicon glyphicon-hand-right redhand" ></span> 
+                        <span class="designtext"> How to Use</span>
+                    </button>
+
+                    <!--popup start-->
+                    <div class="popup1" >              
+                        <span class="popuptext1" id="myPopup1"> 
+                          <h5>  How to Use Pacmen Exercise</h5>
+                          <div style="border-bottom: 2px black solid;"></div> 
+                         
+                          <ul style="margin:10px; padding:10px; text-align: justify;">
+                            <li>  First add Pacmen. </li>
+                            <li>  No limit on Number of Pacmen</li>
+                            <li>  Start To Play </li>
+                            <li>  Add new Pacmen anytime in the game</li>
+                            <li>  Use Pause button to pause the game then start again</li>
+                            <li>  Use Stop button to clear the Pacmen</li>
+                            <li>  Click popup anywhere to close it or click the same button again </li>
+                          </ul> 
+                                         
+                        </span>
+                    </div>
+                </li>
                                                 
                 <li class="list-inline-item">
                         <!-- https://nileemas.github.io/pacmen/ -->
                     <button type="button" onclick="window.location.href='../profile/index.html';" 
-                        style="width: 95px; background-color: black; border-right: 5px burlywood solid; " >
-                        <span Class="glyphicon glyphicon-hand-right" style="color:red;font-size:30px !important; display:inline; margin-left: 0;" ></span> 
+                            id="btn-leftbar" style="margin-top: 25px;"> 
+                        <span Class="glyphicon glyphicon-hand-right redhand"></span> 
                         <span class="designtext" > Home</span>
                     </button>
                 </li>
 
                 <li class="list-inline-item">
-                    <button type="button" onclick="window.location.href='https://github.com/NileemaS/pacmen/blob/main/README.md';" 
-                        style="width: 170px; background-color: black; border-right: 5px burlywood 
-                        solid; margin: 50px;" >
-                        <span Class="glyphicon glyphicon-hand-right" style="color:red;font-size:30px 
-                            !important; display:inline; margin-left: 0;" ></span> 
+                    <button id="btn-leftbar" type="button" onclick=
+                    "window.location.href='https://github.com/NileemaS/pacmen/blob/main/README.md';"
+                        style="margin-top: 25px;"> 
+                        <span Class="glyphicon glyphicon-hand-right redhand" ></span> 
                         <span class="designtext" > Pacmen ReadMe</span>
                     </button>
                 </li>
 
                 <li class="list-inline-item">
-                    <button type="button" onclick="window.location.href='https://github.com/NileemaS/pacmen/blob/main/LICENSE';" 
-                        style="width: 110px; background-color: black; border-right: 5px burlywood 
-                            solid; margin-left: 10px; " >
-                        <span Class="glyphicon glyphicon-hand-right" style="color:red;font-size:30px
-                            !important; display:inline; margin-left: 0;" ></span> 
+                    <button id="btn-leftbar" type="button" onclick=
+                    "window.location.href='https://github.com/NileemaS/pacmen/blob/main/LICENSE';"
+                    style="margin-top: 25px;"> 
+                        <span Class="glyphicon glyphicon-hand-right redhand"></span> 
                         <span class="designtext" > License</span>
                     </button>
                 </li>
@@ -60,10 +89,8 @@
                 <li class="list-inline-item">
                     <li class="list-inline-item">
                         <button type="button" onclick="window.location.href='../profile/index.html';" 
-                            style="width: 115px; background-color: black; border-right: 5px burlywood 
-                            solid; margin-top: 40px; margin-left: 40;" >
-                            <span Class="glyphicon glyphicon-hand-right" style="color:red;font-size:30px 
-                                !important; display:inline; margin-left: 0;" ></span> 
+                        id="btn-leftbar" style="margin-top: 25px;">                             
+                            <span Class="glyphicon glyphicon-hand-right redhand"></span> 
                             <span class="designtext" > Contact </span>
                         </button>
                     </li>
@@ -83,5 +110,13 @@
     <footer-comp> </footer-comp>
 
 </body>
+<script>
+
+    //How to use button click, open popup//
+    function myFunction() {
+        var popupin = document.getElementById("myPopup1");
+        popupin.classList.toggle("show1");
+    }
+</script>
 </html>
 
