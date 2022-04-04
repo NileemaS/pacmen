@@ -146,8 +146,6 @@ div {
 * {box-sizing: border-box}
 body {font-family: "Lato", sans-serif;}
 
-
-
 /* The actual popup (appears on top) */
 .popup1 .popuptext1 {
   visibility: hidden;
@@ -158,7 +156,7 @@ body {font-family: "Lato", sans-serif;}
   left: 30%;
   margin-left: -50px;
   margin-top: -50px;
-  z-index: 15;
+  z-index: 10;
   background-color: #555;
   color: #fff;
   border-radius: 6px;  
@@ -171,8 +169,10 @@ body {font-family: "Lato", sans-serif;}
   left: 50%;
   margin-left: -50px;
   margin-top: -50px;
-  z-index: 15;
-  border-width: 10px  #555 solid;
+  z-index: 10;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #555;
 }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
@@ -192,4 +192,3 @@ body {font-family: "Lato", sans-serif;}
   from {opacity: 0;}
   to {opacity:1 ;}
 }
-
