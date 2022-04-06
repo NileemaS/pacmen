@@ -22,7 +22,6 @@ div {
   height: 200px;
 }
 
-
 .button {
   border: none;
   padding: 15px 32px;
@@ -141,13 +140,12 @@ div {
   color: white;
 }
 
-
 /* left div */
 * {box-sizing: border-box}
 body {font-family: "Lato", sans-serif;}
 
 /* The actual popup (appears on top) */
-.popup .popuptext {
+.popupPM .popuptextPM {
   visibility: hidden;
   width: 700px;
   height: 300px;
@@ -163,7 +161,7 @@ body {font-family: "Lato", sans-serif;}
 }
 
 /* Popup arrow */
-.popup .popuptext::after {
+.popupPM .popuptextPM::after {
   content: ""; 
   top: 50%;
   left: 50%;
@@ -176,7 +174,7 @@ body {font-family: "Lato", sans-serif;}
 }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
+.popupPM .showPM {
   display: block;
   visibility: visible;
   -webkit-animation: fadeIn 1s;

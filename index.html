@@ -33,26 +33,28 @@
             <div class="divimage"></div>
             <ul class="list-unstyled list-inline" style="margin: 5px;"> 
                 <li class="list-inline-item">
-                    <button type="button" onclick="myTogFunction1()"
+                    <button type="button" onclick="myTogFunctionHowTo()"
                         id="btn-leftbar" >                
                         <span Class="glyphicon glyphicon-hand-right redhand" ></span> 
                         <span class="designtext"> How to Use</span>
                     </button>
 
                     <!--popup start-->
-                    <div class="popup" >              
-                        <span class="popuptext" id="myPopup"> 
+                    <div class="popupPM" >              
+                        <span class="popuptextPM" id="myPopupPM"> 
                           <h5>  How to Use Pacmen Exercise</h5>
                           <div style="border-bottom: 2px black solid;"></div> 
                          
                           <ul style="margin:10px; padding:10px; text-align: justify;">
-                            <li>  First add Pacmen. </li>
-                            <li>  No limit on Number of Pacmen</li>
-                            <li>  Start To Play </li>
+                            <li>  First add Pacmen to begin with the game. </li>
+                            <li>  No limit on Number of Pacmen to add</li>
+                            <li>  Click Start To Play </li>
                             <li>  Add new Pacmen anytime in the game</li>
                             <li>  Use Pause button to pause the game then start again</li>
                             <li>  Use Stop button to clear the Pacmen</li>
-                            <li>  Click popup anywhere to close it or click the same button again </li>
+                            <li>  Left side bar has options to visit Home and Contact</li>
+                            <li>  To visit README and License, click the options from left side bar</li>
+                            <li>  To close this popup, Click the button 'How to Use' again </li>
                           </ul> 
                                          
                         </span>
@@ -98,7 +100,29 @@
             </ul>   
         </div>
 
-        <div  id = "center" class = "divcenter"><pacmen-comp> </pacmen-comp> </div>    
+        <!--Pacmen component-->
+        <div  id = "center" class = "divcenter">
+            <div style="padding-left: 10px;  display: flex; flex: 1; padding-bottom: 2px;
+                       background-color: blue; height: 50px;">
+                <img  src="https://cdn.jsdelivr.net/gh/NileemaS/profile/bb.gif.gif" alt="Bouncin
+            Balls GIF" >
+                <h3 style="margin-left: 20%; font-family:cursive; padding-bottom: 5px; color:white;">
+                    Welcome to Pacmen Exercise </h3>  
+                
+                <div style="margin-left: 100px; align-items: center; margin-top: 5px;">
+                  <button onclick= "doFullScreenPM();">
+                    <span class="glyphicon glyphicon-fullscreen">
+                    </span>Open Fullscreen  
+                  </button>				
+                </div>           
+            </div>
+                            
+            <div class="testcolor"></div>
+
+            <pacmen-comp>  </pacmen-comp> 
+        </div>  
+
+        <!--main right side bar-->
         <div id = "rightside" class = "divright"> AD: 
             <div><img src = "https://cdn.jsdelivr.net/gh/NileemaS/profile/doll.jpg" alt="Doll Image" class="adsize"></div>
             <div> <img src = "https://cdn.jsdelivr.net/gh/NileemaS/profile/ballarrangement.jpg" alt="Ball Arrangement" class="adsize"></div>
@@ -113,10 +137,22 @@
 <script>
 
     //How to use button click, open popup//
-    function myTogFunction1() {
-        var popupin = document.getElementById("myPopup");
-        popupin.classList.toggle("show");
+    function myTogFunctionHowTo() {
+        var popupin = document.getElementById("myPopupPM");
+        popupin.classList.toggle("showPM");
     }
+ 
+    function doFullScreenPM() {
+        var elem = document.getElementById("center"); 
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+    }
+
 </script>
 </html>
 

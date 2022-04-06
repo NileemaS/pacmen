@@ -1,9 +1,9 @@
-//get width and height of the center container.//
-const eleCenterDiv = document.querySelector('#center').getBoundingClientRect();
-const divX = eleCenterDiv.left ;
-const divY = eleCenterDiv.top ;
-const divWidth =  eleCenterDiv.right ;
-const divHeight = eleCenterDiv.bottom ;
+
+function getCenterDivBorder () {
+    //get width and height of the center container.//
+    let eleCenterDiv = document.querySelector('#center').getBoundingClientRect();
+    return eleCenterDiv;
+}
 
 const pacArray = [
     ['PacMan1.png', 'PacMan2.png'],
@@ -25,6 +25,12 @@ function setToRandom(minX, maxX, minY, maxY) {
 
 // Factory to make a PacMan at a random position with random velocity
 function makePac() {
+    let eleCenterDiv = getCenterDivBorder();
+    let divX = eleCenterDiv.left ;
+    let divY = eleCenterDiv.top ;
+    let divWidth =  eleCenterDiv.right ;
+    let divHeight = eleCenterDiv.bottom ;
+
     // returns an object with random values scaled {x: 33, y: 21}
     let velocity = setToRandom(-5, 10, -5, 5); 
     let position = setToRandom(divX, divWidth-50, divY, divHeight-50) ;
@@ -72,6 +78,13 @@ function update() {
 }
 
 function checkCollisions(item) {
+    //check center div's borders//
+    let eleCenterDiv = getCenterDivBorder();
+    let divX = eleCenterDiv.left ;
+    let divY = eleCenterDiv.top ;
+    let divWidth =  eleCenterDiv.right ;
+    let divHeight = eleCenterDiv.bottom ;
+
     // detect collision with all walls and make pacman bounce
     if (item.position.x + item.velocity.x + item.newimg.width > divWidth  ||
         item.position.x + item.velocity.x < divX) {
@@ -83,6 +96,18 @@ function checkCollisions(item) {
             item.velocity.y = -item.velocity.y ;
         };
     //
+    // if pacmen is out of the border, then set them back inside the border.
+    if (item.position.x + item.newimg.width < divX || 
+        item.position.y + item.newimg.height < divY){
+        item.position.x = divX + 100 ;
+        item.position.y = divY + 100 ;
+    };
+
+    if (item.position.x + item.newimg.width > divWidth || 
+        item.position.y + item.newimg.height > divHeight) {
+        item.position.x = divWidth -100 ;
+        item.position.y = divHeight - 100 ;
+    };
 }
 
 function makeOne() {
@@ -111,20 +136,8 @@ function stopGame() {
     pacMen = [];
         
 }
-/*
-function doFullScreen() {
-   
-  var elem = document.getElementById("center");
-    if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { 
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) {
-    elem.msRequestFullscreen();
-  }
-}
-*/
+
 //
 if (typeof module   !== 'undefined') {
-    module.exports = { checkCollisions, update, pauseGame, stopGame, doFullScreen, pacMen };
+    module.exports = { checkCollisions, update, pauseGame, stopGame,getCenterDivBorder, pacMen };
   }
